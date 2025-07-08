@@ -4,13 +4,14 @@
  * Automatic routes for `./src/pages/*.vue`
  */
 
+import { createRouter, createWebHistory } from "vue-router/auto";
+import { setupLayouts } from "virtual:generated-layouts";
+
 // Composables
-import { createRouter, createWebHistory } from 'vue-router/auto'
-import { setupLayouts } from 'virtual:generated-layouts'
 
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
   extendRoutes: setupLayouts,
-})
+});
 
-export default router
+export default router;
