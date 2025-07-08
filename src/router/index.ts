@@ -10,7 +10,7 @@ import { setupLayouts } from "virtual:generated-layouts";
 // Composables
 
 const router = createRouter({
-  history: createWebHistory(process.env.BASE_URL),
+  history: createWebHistory("/spectre-bet/"),
   extendRoutes: setupLayouts,
 });
 
