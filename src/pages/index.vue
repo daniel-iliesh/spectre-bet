@@ -57,9 +57,27 @@
         </v-card>
       </v-col>
     </v-row>
+    <v-row>
+      <v-col>{{ JSON.stringify(user) }}</v-col>
+    </v-row>
   </v-container>
 </template>
 
 <script lang="ts" setup>
-//
+import WebApp from "@twa-dev/sdk";
+import { onMounted, ref } from "vue";
+
+interface UserData {
+  id: number;
+  firstName?: string;
+  lastName?: string;
+  username?: string;
+  photo_url?: string;
+}
+
+const user = ref<UserData | null>(null);
+
+onMounted(() => {
+  user.value = WebApp.initDataUnsafe.user as UserData;
+});
 </script>
