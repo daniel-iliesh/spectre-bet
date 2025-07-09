@@ -12,5 +12,18 @@
 </template>
 
 <script lang="ts" setup>
-//
+import WebApp from "@twa-dev/sdk";
+import { onMounted } from "vue";
+
+interface UserData {
+  id: number;
+  firstName?: string;
+  lastName?: string;
+  username?: string;
+  photo_url?: string;
+}
+
+onMounted(() => {
+  console.log(WebApp.initDataUnsafe.user as UserData);
+});
 </script>
