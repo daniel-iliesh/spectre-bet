@@ -47,18 +47,15 @@
                     src="https://ssl.gstatic.com/onebox/media/sports/logos/Th4fAVAZeCJWRcKoLW7koA_64x64.png"
                   />
                   <span class="font-weight-bold">Real Madrid</span>
-                  <span class="text-primary text-h6 font-weight-bold"
-                    >1.73</span
-                  >
+                  <span class="text-primary text-h6 font-weight-bold">
+                    1.73
+                  </span>
                 </v-card>
               </v-col>
             </v-row>
           </v-card-text>
         </v-card>
       </v-col>
-    </v-row>
-    <v-row>
-      <v-col>{{ JSON.stringify(user) }}</v-col>
     </v-row>
   </v-container>
 </template>
@@ -69,10 +66,12 @@ import { onMounted, ref } from "vue";
 
 interface UserData {
   id: number;
-  firstName?: string;
-  lastName?: string;
-  username?: string;
-  photo_url?: string;
+  first_name: string;
+  last_name: string;
+  username: string;
+  language_code: string;
+  allows_write_to_pm: boolean;
+  photo_url: string;
 }
 
 const user = ref<UserData | null>(null);
